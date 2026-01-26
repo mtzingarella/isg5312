@@ -1,0 +1,41 @@
+#!/bin/bash 
+#SBATCH --job-name=isg5311_data_download
+#SBATCH --mail-user=vzu25002@uconn.edu
+#SBATCH --mail-type=ALL
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=10G
+#SBATCH --qos=general
+#SBATCH --partition=general
+
+hostname
+date
+
+
+##################################
+# Download fastq files from accessionlist of SRA run accessions
+##################################
+
+module load sratoolkit/3.0.5
+
+OUTDIR=/scratch/mzingarella/isg5311_final_project/data/fastq/
+mkdir -p $OUTDIR
+ACCLIST=../../metadata/accessionlist.txt
+TMP=/scratch/mzingarella/tmp
+mkdir -p $TMP
+
+cat $ACCLIST | while read ACC; do
+    echo "Downloading $ACC"
+    fasterq-dump $ACC -O $OUTDIR --split-files
+done
+
+#################################
+# Gunzip compression of all fastq files in OUTDIR
+#################################
+cd $OUTDIR
+for file in *.fastq; do
+    echo "Compressing $file"
+    gzip $file
+done
