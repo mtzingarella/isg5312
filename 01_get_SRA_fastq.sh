@@ -12,7 +12,7 @@
 
 hostname
 date
-
+CHANGE="change made for isg5312 exercise"
 
 ##################################
 # Download fastq files from accessionlist of SRA run accessions
