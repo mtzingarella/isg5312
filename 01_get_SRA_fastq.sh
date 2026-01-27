@@ -18,6 +18,8 @@ CHANGE="change made for isg5312 exercise"
 # Download fastq files from accessionlist of SRA run accessions
 ##################################
 
+# Add comment - Jennifer S. was here on 27Jan2026 for Exercise ISG5312-EX2A. Hi Matt Z.!
+
 module load sratoolkit/3.0.5
 
 OUTDIR=/scratch/mzingarella/isg5311_final_project/data/fastq/
