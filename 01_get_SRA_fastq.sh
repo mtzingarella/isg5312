@@ -14,6 +14,7 @@ hostname
 date
 CHANGE="change made for isg5312 exercise"
 newbranchCHANGE1="I am a conflict"
+newbranchCHANGE2="I am another conflict!"
 ##################################
 # Download fastq files from accessionlist of SRA run accessions
 ##################################
