@@ -12,12 +12,9 @@
 
 hostname
 date
-CHANGE="change made for isg5312 exercise"
-newbranchCHANGE1="I am a conflict"
-newbranchCHANGE2="I am another conflict!"
-##################################
-# Download fastq files from accessionlist of SRA run accessions
-##################################
+CHANGE="change made for isg5312"
+newbranchCHANGE1="I am a resolved conflict"
+newbranchCHANGE2="The merge can now be completed"
 
 module load sratoolkit/3.0.5
 
